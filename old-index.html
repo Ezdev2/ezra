@@ -28,6 +28,62 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        /* Blog Section Styles */
+        .blog .container {
+            position: relative;
+        }
+
+        .blog .section-title {
+            margin-bottom: 40px;
+        }
+
+        .blog .article {
+            margin-bottom: 30px;
+        }
+
+        .blog .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .blog .article h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .blog .article p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .pagination {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .pagination button {
+            background-color: transparent;
+            color: #fff;
+            border: 0.5px solid white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .pagination button:disabled {
+            background-color: #e4e3e352;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,15 +91,16 @@
     <header id="header">
         <div class="container">
 
-            <h1><a href="index.html">Ezra Fanomezantsoa</a></h1>
-            <h2>Je suis <span> développeur web </span> &amp; <span> chef de projet numérique </span></h2>
+            <h2><span>Ezra Fanomezantsoa</span></h2>
+            <h1><a href="/">Dévéloppeur web</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link active" href="#header">Accueil</a></li>
                     <li><a class="nav-link" href="#about">A propos</a></li>
-                    <li><a class="nav-link" href="#resume">Cv</a></li>
+                    <li><a class="nav-link" href="#resume">CV</a></li>
                     <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link" href="#blog">Blog</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -120,8 +177,7 @@
 
             <div class="section-title">
                 <h2>Mon CV</h2>
-                <a href="Ezra_Fanomezantsoa_Fr.pdf">Télécharger mon CV en français</a> <br />
-                <a href="Ezra_Fanomezantsoa_En.pdf">Download my english CV</a>
+                <a href="Ezra_Fanomezantsoa_En.pdf">Télécharger mon CV</a>
             </div>
 
             <div class="row">
@@ -145,7 +201,7 @@
                     <h3 class="resume-title">Expérience professionnelle</h3>
 
                     <div class="resume-item">
-                        <h4>Projetc Manager</h4>
+                        <h4>Project Manager</h4>
                         <h5>2024 - à présent</h5>
                         <p><em><a href="http://www.afaas-africa.org/">Team Lead chez Maki Office</a></em></p>
                         <p>
@@ -193,7 +249,7 @@
                         <p><em><a href="http://www.afaas-africa.org/">Express in code</a></em></p>
                         <p>
                         <ul>
-                            <li>Intégration d’une interface UI avec React JÀ</li>
+                            <li>Intégration d’une interface UI avec React JS</li>
                             <li>Conception UX/UI Design</li>
                             <li>Ergonomie de l’interface</li>
                         </ul>
@@ -446,7 +502,7 @@
                         </div>
 
                         <div class="progress">
-                            <span class="skill">Marketing <i class="val">60%</i></span>
+                            <span class="skill">Marketing <i class="val">65%</i></span>
                             <div class="progress-bar-wrap">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
                                     aria-valuemax="100"></div>
@@ -484,29 +540,12 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/createak-thumb.png" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Createak</h4>
-                            <div class="portfolio-links">
-                                <a href="https://createak.mu/"
-                                    class="portfolio-lightbox" title="Createak"><i class="bx bx-link"></i></a>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/createak.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Createak"><i class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
                         <img src="assets/img/portfolio/casano-agency-thumb.png" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>Casano Site</h4>
                             <div class="portfolio-links">
                                 <a href="https://casano-site.netlify.app/"
-                                    class="portfolio-lightbox" title="Casano site"><i class="bx bx-link"></i></a>
+                                    title="Casano site" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/casano-agency.png" data-gallery="portfolioGallery"
@@ -523,7 +562,7 @@
                             <h4>Pinkscrap</h4>
                             <div class="portfolio-links">
                                 <a href="https://pinkscrap2.netlify.app/"
-                                    class="portfolio-lightbox" title="Pinkscrap"><i class="bx bx-link"></i></a>
+                                    title="Pinkscrap" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/pinkscrap.png" data-gallery="portfolioGallery"
@@ -535,12 +574,27 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
+                        <img src="assets/img/portfolio/createak-thumb.png" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Createak</h4>
+                            <div class="portfolio-links">
+                                <a href="https://createak.mu/" title="Createak" target="_blank"><i class="bx bx-link"></i></a>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="assets/img/portfolio/createak.png" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="Createak"><i class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-wrap">
                         <img src="assets/img/portfolio/artiist-thumb.png" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>Artiist</h4>
                             <div class="portfolio-links">
-                                <a href="https://www.artiist.fr/"
-                                    class="portfolio-lightbox" title="Artiist"><i class="bx bx-link"></i></a>
+                                <a href="https://www.artiist.fr/" title="Artiist" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/artiist.png" data-gallery="portfolioGallery"
@@ -556,8 +610,7 @@
                         <div class="portfolio-info">
                             <h4>Chat App</h4>
                             <div class="portfolio-links">
-                                <a href="https://my-chat.app/"
-                                    class="portfolio-lightbox" title="genius"><i class="bx bx-link"></i></a>
+                                <a href="https://my-chat.app/" title="genius" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/genius.png" data-gallery="portfolioGallery"
@@ -574,7 +627,7 @@
                             <h4>Green Cycle Rescue</h4>
                             <div class="portfolio-links">
                                 <a href="https://fansoaezra.wordpress.com/"
-                                    class="portfolio-lightbox" title="Green Cycle Rescue"><i class="bx bx-link"></i></a>
+                                    title="Green Cycle Rescue" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/green-cycle-rescue.png" data-gallery="portfolioGallery"
@@ -591,11 +644,12 @@
                             <h4>Association Mampiarina</h4>
                             <div class="portfolio-links">
                                 <a href="https://associationmampiarina.webflow.io/"
-                                    class="portfolio-lightbox" title="association-mampiarina"><i class="bx bx-link"></i></a>
+                                    title="association-mampiarina" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/association-mampiarina.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="association-mampiarina"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/portfolio/association-mampiarina.png"
+                                    data-gallery="portfolioGallery" class="portfolio-lightbox"
+                                    title="association-mampiarina"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -608,7 +662,7 @@
                             <h4>Orus Solution</h4>
                             <div class="portfolio-links">
                                 <a href="https://fansoadev.github.io/orussite/"
-                                    class="portfolio-lightbox" title="Orus solution"><i class="bx bx-link"></i></a>
+                                    title="Orus solution" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/orus-solutions.png" data-gallery="portfolioGallery"
@@ -625,7 +679,7 @@
                             <h4>Car rental</h4>
                             <div class="portfolio-links">
                                 <a href="https://maki-car-rental-mada.netlify.app/"
-                                    class="portfolio-lightbox" title="location-voiture"><i class="bx bx-link"></i></a>
+                                    title="location-voiture" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/location-voiture.png" data-gallery="portfolioGallery"
@@ -641,8 +695,7 @@
                         <div class="portfolio-info">
                             <h4>Immo project</h4>
                             <div class="portfolio-links">
-                                <a href="https://immoch.my-preprod.space/"
-                                    class="portfolio-lightbox" title="Immo"><i class="bx bx-link"></i></a>
+                                <a href="https://immoch.my-preprod.space/" title="Immo" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/Immo.png" data-gallery="portfolioGallery"
@@ -674,8 +727,7 @@
                             <h4>Safly Design</h4>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/safly-post.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Safly"><i
-                                        class="bx bx-plus"></i></a>
+                                    class="portfolio-lightbox" title="Safly"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -688,12 +740,11 @@
                             <h4>Safly Design</h4>
                             <div class="portfolio-links">
                                 <a href="https://www.figma.com/proto/kdTsQCZTmkRgTE171vXhXK/Safly?page-id=21%3A2076&node-id=145%3A1262&viewport=336%2C288%2C0.05&scaling=min-zoom&starting-point-node-id=145%3A414"
-                                    class="portfolio-lightbox" title="Safly"><i class="bx bx-link"></i></a>
+                                    title="Safly" target="_blank"><i class="bx bx-link"></i></a>
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/safly-mockup.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Safly"><i
-                                        class="bx bx-plus"></i></a>
+                                    class="portfolio-lightbox" title="Safly"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -706,8 +757,7 @@
                             <h4>Logo gasyware technology</h4>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/logo-gasyW.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="logo-gasyWare"><i
-                                        class="bx bx-plus"></i></a>
+                                    class="portfolio-lightbox" title="logo-gasyWare"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -720,8 +770,7 @@
                             <h4>Logo Createak</h4>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/logo-creat.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="logo-createak"><i
-                                        class="bx bx-plus"></i></a>
+                                    class="portfolio-lightbox" title="logo-createak"><i class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -734,8 +783,7 @@
                             <h4>Design Orus</h4>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/Landing - Orus.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                                    title="Design figma - gasyware technology"><i
+                                    class="portfolio-lightbox" title="Design figma - gasyware technology"><i
                                         class="bx bx-plus"></i></a>
                             </div>
                         </div>
@@ -763,60 +811,31 @@
                             <h4>Design Gasyware Technology</h4>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/gasyware.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox"
-                                    title="Design figma - gasyware technology"><i
+                                    class="portfolio-lightbox" title="Design figma - gasyware technology"><i
                                         class="bx bx-plus"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/ez_portfolio.png" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web</h4>
-                            <p>Design HTML/CSS</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/ez_portfolio.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web page Design"><i class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-               
-
-                <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/market3.png" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Design Social Media</h4>
-                            <p>DB-Farm</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/market3.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="DB-Farm"><i class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/gomobile.png" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App</h4>
-                            <p>GO-MobileSCHOOL K2E</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/gomobile.png" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="GO-MobileSCHOOL K2E"><i
-                                        class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
 
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Blog</h2>
+                <p>Derniers articles</p>
+            </div>
+
+            <div class="pagination" id="pagination-container">
+                <button id="prev-btn" disabled><i class="bi bi-chevron-double-left"></i></button>
+                <button id="next-btn"><i class="bi bi-chevron-double-right"></i></button>
+            </div>
+            <div class="row" id="blog-container">
+                <!-- Articles will be injected here by JavaScript -->
+            </div>
         </div>
     </section>
 
@@ -825,21 +844,87 @@
 
             <div class="section-title">
                 <h2>Contact</h2>
-                <p>Me contacter</p>
+                <p>Prêt à donner vie à votre projet numérique ?</p>
             </div>
 
-            <div class="row mt-2">
+            <p>Besoin d'un site web professionnel ou d'aide pour concrétiser votre projet numérique ? <br> Je suis là pour
+                vous aider à transformer vos idées en réalité. <br> Laissez-moi un message ci-dessous et je vous répondrai dans les plus
+                brefs délais. Ensemble, faisons de votre vision une réussite en ligne !</p>
 
-                <div class="col-md-6 d-flex align-items-stretch">
+            <div class="row" style="margin-top: 32px;">
+                <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
                     <div class="info-box">
-                        <i class="bx bx-map"></i>
-                        <h3>Adresse</h3>
-                        <p>Antananarivo, 101 MADAGASCAR</p>
+                        <form style="display: flex; flex-direction: column; gap: 24px;" action="https://formspree.io/f/mayravnq" method="POST" class="border-right pr-5 mb-5"
+                            method="post" id="contactForm" name="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" class="form-control" name="first-name" id="fname"
+                                        placeholder="Nom">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="text" class="form-control" name="last-name" id="lname"
+                                        placeholder="Prénom">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="7"
+                                        placeholder="Votre message"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Envoyer"
+                                        class="btn rounded-0 py-2 px-4">
+                                    <span class="submitting"></span>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="box">
+                            <i class="bx bx-envelope"></i>
+                            <h3>Adresse e-mail</h3>
+                            <p><a href="mailto:fansoaezra@gmail.com">fansoaezra@gmail.com</a></p>
+                        </div>
+                        <div class="box">
+                            <i class="bx bx-phone-call"></i>
+                            <h3>Téléphone</h3>
+                            <p>+261 34 58 332 43</p>
+                        </div>
+                        <div class="box">
+                            <i class="bx bx-share-alt"></i>
+                            <h3>Réseaux sociaux</h3>
+                            <div class="social-links">
+                                <a href="https://github.com/Ezdev2" class="twitter"><i class="bi bi-github"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100009140898267" class="facebook"><i
+                                        class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/ezdev2/" class="instagram"><i
+                                        class="bi bi-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/ezra-fanomezantsoa-00371820b" class="linkedin"><i
+                                        class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-                    <div class="info-box">
+                <div style="flex-direction: column; background: rgba(255, 255, 255, 0.08);" class="col-md-6 d-flex align-items-stretch form-box">
+                    <div class="box">
+                        <i class="bx bx-envelope"></i>
+                        <h3>Adresse e-mail</h3>
+                        <p><a href="mailto:fansoaezra@gmail.com">fansoaezra@gmail.com</a></p>
+                    </div>
+                    <div class="box">
+                        <i class="bx bx-phone-call"></i>
+                        <h3>Téléphone</h3>
+                        <p>+261 34 58 332 43</p>
+                    </div>
+                    <div class="box">
                         <i class="bx bx-share-alt"></i>
                         <h3>Réseaux sociaux</h3>
                         <div class="social-links">
@@ -853,23 +938,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
-                        <i class="bx bx-envelope"></i>
-                        <h3>Adresse e-mail</h3>
-                        <p><a href="mailto:fansoaezra@gmail.com">fansoaezra@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
-                        <i class="bx bx-phone-call"></i>
-                        <h3>Téléphone</h3>
-                        <p>+261 34 58 332 43</p>
-                    </div>
-                </div>
             </div>
-
         </div>
     </section>
 
@@ -882,7 +951,60 @@
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
     <script src="assets/js/main.js"></script>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="assets/js/blog.js"></script>
+
+
+    <script>
+        // Example articles data
+        const articles = Array.from({ length: 50 }, (_, i) => ({
+            title: `Article Title ${i + 1}`,
+            text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum ${i + 1}.`,
+            img: `https://via.placeholder.com/350x200?text=Article+${i + 1}`
+        }));
+
+        const articlesPerPage = 8;
+        let currentPage = 1;
+
+        function loadArticles() {
+            const container = document.getElementById('blog-container');
+            container.innerHTML = '';
+
+            const start = (currentPage - 1) * articlesPerPage;
+            const end = Math.min(start + articlesPerPage, articles.length);
+            const visibleArticles = articles.slice(start, end);
+
+            visibleArticles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'col-lg-3 col-md-6 article';
+                articleElement.innerHTML = `
+                    <img src="${article.img}" alt="${article.title}">
+                    <h3>${article.title}</h3>
+                    <p>${article.text}</p>
+                `;
+                container.appendChild(articleElement);
+            });
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = end >= articles.length;
+        }
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentPage * articlesPerPage < articles.length) {
+                currentPage++;
+                loadArticles();
+            }
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                loadArticles();
+            }
+        });
+
+        // Initial load of articles
+        loadArticles();
+    </script>
 </body>
 
 </html>
