@@ -1,0 +1,53 @@
+/* Blog Section Styles */
+.blog .container {
+    position: relative;
+}
+
+.blog .section-title {
+    margin-bottom: 40px;
+}
+
+.blog .article {
+    margin-bottom: 30px;
+}
+
+.blog .article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.blog .article h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog .article p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.pagination {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    margin: 30px;
+}
+
+.pagination button {
+    background-color: transparent;
+    color: #fff;
+    border: 0.5px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.pagination button:disabled {
+    background-color: #e4e3e352;
+    cursor: not-allowed;
+}
