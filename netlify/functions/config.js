@@ -8,6 +8,5 @@ exports.handler = async (event) => {
             tableName: process.env.TABLE_NAME
         })
     };
-    console.log("Response from function:", response);
     return response;
 };
