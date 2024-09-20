@@ -96,14 +96,14 @@ function formatDate(dateString) {
 document.getElementById('next-btn').addEventListener('click', () => {
     if (currentPage * articlesPerPage < articles.length) {
         currentPage++;
-        loadArticles();
+        displayArticles();
     }
 });
 
 document.getElementById('prev-btn').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
-        loadArticles();
+        displayArticles();
     }
 });
 
