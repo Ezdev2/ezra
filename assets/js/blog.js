@@ -7,8 +7,8 @@ let endpoint;
 // Load environment variables
 async function loadConfig() {
     try {
-        const isProduction = window.location.hostname !== 'localhost';
-        if (isProduction) {
+        const islocal = window.location.hostname === 'localhost';
+        if (!islocal) {
             // En production
             const response = await fetch('/.netlify/functions/config');
             const data = await response.json();
