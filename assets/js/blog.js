@@ -7,7 +7,8 @@ let endpoint;
 // Load environment variables
 async function loadConfig() {
     try {
-        const response = await fetch('/config');
+        const isProduction = window.location.hostname !== 'localhost';
+        const response = await fetch(isProduction ? '/.netlify/functions/config' : '/config');
         const config = await response.json();
 
         airtableApiKey = config.airtableApiKey;
