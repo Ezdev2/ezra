@@ -1,11 +1,13 @@
-exports.handler = async (event, context) => {
-    return {
+exports.handler = async (event) => {
+    const response = {
         statusCode: 200,
         body: JSON.stringify({
-            AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
-            BASE_ID: process.env.BASE_ID,
-            BASE_URL: process.env.BASE_URL,
-            TABLE_NAME: process.env.TABLE_NAME,
-        }),
+            airtableApiKey: process.env.AIRTABLE_API_KEY,
+            baseId: process.env.BASE_ID,
+            baseUrl: process.env.BASE_URL,
+            tableName: process.env.TABLE_NAME
+        })
     };
+    console.log("Response from function:", response);
+    return response;
 };
