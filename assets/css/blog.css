@@ -9,6 +9,7 @@
 
 .blog .article {
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .blog .article img {
@@ -20,7 +21,12 @@
 
 .blog .article h3 {
     font-size: 1.5em;
+    font-weight: 700;
     margin-bottom: 10px;
+}
+
+.blog .article small {
+    color: #18d26e;
 }
 
 .blog .article p {

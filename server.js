@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/blog', (req, res) => {
+    res.sendFile(path.join(__dirname, 'blog.html'));
+});
+
 app.get('/test', async (req, res) => {
     try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts');

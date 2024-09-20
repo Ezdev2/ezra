@@ -1,4 +1,4 @@
-const articlesPerPage = 8;
+const articlesPerPage = 6;
 let currentPage = 1;
 let articles = [];
 let airtableApiKey;
@@ -15,7 +15,9 @@ async function loadConfig() {
             articles = data.records.map(record => ({
                 title: record.fields.Titre,
                 text: record.fields.Resume,
-                img: `https://via.placeholder.com/350x200?text=Article+${record.id}`
+                img: record.fields.Image?.[0]?.url,
+                date: record.createdTime,
+                images: record.fields.Image,
             }))
                 .filter(article => article.title !== undefined);
         } else {
@@ -48,12 +50,13 @@ function displayArticles() {
     const end = Math.min(start + articlesPerPage, articles.length);
     const visibleArticles = articles.slice(start, end);
 
-    visibleArticles.forEach(article => {
+    visibleArticles.forEach((article, index) => {
         const articleElement = document.createElement('div');
-        articleElement.className = 'col-lg-3 col-md-6 article';
+        articleElement.className = 'col-lg-4 col-md-6 article';
         articleElement.innerHTML = `
             <img src="${article.img}" alt="${article.title}">
             <h3>${article.title}</h3>
+            <small>${formatDate(article.date)}</small>
             <p>${article.text}</p>
         `;
         container.appendChild(articleElement);
@@ -74,13 +77,22 @@ async function loadArticles() {
         articles = data.records.map(record => ({
             title: record.fields.Titre,
             text: record.fields.Resume,
-            img: `https://via.placeholder.com/350x200?text=Article+${record.id}`
+            img: record.fields.Image?.[0]?.url,
+            date: record.createdTime,
+            images: record.fields.Image,
         }))
             .filter(article => article.title !== undefined);
         displayArticles();
     } catch (error) {
         console.error('Error fetching articles:', error);
     }
+}
+
+// Format date
+function formatDate(dateString) {
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', options);
 }
 
 // Pagination controls
