@@ -1,10 +1,26 @@
-const airtableApiKey = 'patJhJXhi2Ot9Yqdl.446f54b6c107359ea68844f930c9cd52e88d61fead8a0c413065ae36cf05d44c';
-const baseId = 'appEQKbikWFlqZlUs';
-const endpoint = `https://api.airtable.com/v0/${baseId}/Table%201`;
-
 const articlesPerPage = 8;
 let currentPage = 1;
 let articles = [];
+let airtableApiKey; 
+let endpoint;
+
+// Load environment variables
+async function loadConfig() {
+    try {
+        const isProduction = window.location.hostname !== 'localhost';
+        const response = await fetch(isProduction ? '/.netlify/functions/config' : '/config');
+        const config = await response.json();
+
+        airtableApiKey = config.airtableApiKey;
+        const baseId = config.baseId;
+        const tableName = config.tableName;
+        endpoint = `${config.baseUrl}/${baseId}/${tableName}`;
+
+        loadArticles();
+    } catch (error) {
+        console.error('Error fetching config:', error);
+    }
+}
 
 // Fetch articles from Airtable
 function loadArticles() {
@@ -19,7 +35,8 @@ function loadArticles() {
                 title: record.fields.Titre,
                 text: record.fields.Resume,
                 img: `https://via.placeholder.com/350x200?text=Article+${record.id}`
-            }));
+            }))
+            .filter(article => article.title !== undefined);
 
             const container = document.getElementById('blog-container');
             container.innerHTML = '';
@@ -32,10 +49,10 @@ function loadArticles() {
                 const articleElement = document.createElement('div');
                 articleElement.className = 'col-lg-3 col-md-6 article';
                 articleElement.innerHTML = `
-            <img src="${article.img}" alt="${article.title}">
-            <h3>${article.title}</h3>
-            <p>${article.text}</p>
-        `;
+                    <img src="${article.img}" alt="${article.title}">
+                    <h3>${article.title}</h3>
+                    <p>${article.text}</p>
+                `;
                 container.appendChild(articleElement);
             });
 
@@ -60,5 +77,5 @@ document.getElementById('prev-btn').addEventListener('click', () => {
     }
 });
 
-// Initial load of articles
-loadArticles();
+// Initial load of configuration
+loadConfig();
