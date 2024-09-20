@@ -20,6 +20,7 @@ async function loadConfig() {
                 images: record.fields.Image,
             }))
                 .filter(article => article.title !== undefined);
+            displayArticles();
         } else {
             // En local, chargez la configuration et utilisez-la directement
             const response = await fetch('/config');
@@ -33,11 +34,30 @@ async function loadConfig() {
             await loadArticles();
         }
 
-        // Affichage des articles (commun aux deux environnements)
-        displayArticles();
-
     } catch (error) {
         console.error('Error in loadConfig:', error);
+    }
+}
+
+async function loadArticles() {
+    try {
+        const response = await fetch(endpoint, {
+            headers: {
+                'Authorization': `Bearer ${airtableApiKey}`
+            }
+        });
+        const data = await response.json();
+        articles = data.records.map(record => ({
+            title: record.fields.Titre,
+            text: record.fields.Resume,
+            img: record.fields.Image?.[0]?.url,
+            date: record.createdTime,
+            images: record.fields.Image,
+        }))
+            .filter(article => article.title !== undefined);
+        displayArticles();
+    } catch (error) {
+        console.error('Error fetching articles:', error);
     }
 }
 
@@ -64,28 +84,6 @@ function displayArticles() {
 
     document.getElementById('prev-btn').disabled = currentPage === 1;
     document.getElementById('next-btn').disabled = end >= articles.length;
-}
-
-async function loadArticles() {
-    try {
-        const response = await fetch(endpoint, {
-            headers: {
-                'Authorization': `Bearer ${airtableApiKey}`
-            }
-        });
-        const data = await response.json();
-        articles = data.records.map(record => ({
-            title: record.fields.Titre,
-            text: record.fields.Resume,
-            img: record.fields.Image?.[0]?.url,
-            date: record.createdTime,
-            images: record.fields.Image,
-        }))
-            .filter(article => article.title !== undefined);
-        displayArticles();
-    } catch (error) {
-        console.error('Error fetching articles:', error);
-    }
 }
 
 // Format date
