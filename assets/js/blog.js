@@ -10,7 +10,7 @@ async function loadConfig() {
         const isProduction = window.location.hostname !== 'localhost';
         if (isProduction) {
             // En production, utilisez le proxy Netlify
-            const response = await fetch('/.netlify/functions/airtableProxy');
+            const response = await fetch('/.netlify/functions/config');
             const data = await response.json();
             articles = data.records.map(record => ({
                 title: record.fields.Titre,
