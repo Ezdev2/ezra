@@ -9,7 +9,7 @@ async function loadConfig() {
     try {
         const isProduction = window.location.hostname !== 'localhost';
         if (isProduction) {
-            // En production, utilisez le proxy Netlify
+            // En production
             const response = await fetch('/.netlify/functions/config');
             const data = await response.json();
             articles = data.records.map(record => ({
@@ -22,7 +22,7 @@ async function loadConfig() {
                 .filter(article => article.title !== undefined);
             displayArticles();
         } else {
-            // En local, chargez la configuration et utilisez-la directement
+            // En local
             const response = await fetch('/config');
             const config = await response.json();
 
@@ -30,8 +30,7 @@ async function loadConfig() {
             const baseId = config.baseId;
             const tableName = config.tableName;
             endpoint = `${config.baseUrl}/${baseId}/${tableName}`;
-
-            await loadArticles();
+            loadArticles();
         }
 
     } catch (error) {
